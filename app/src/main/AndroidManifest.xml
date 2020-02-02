@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Specialities"></activity>
+        <activity android:name=".localride"></activity>
+        <activity android:name=".Specialities" />
         <activity android:name=".Popup" />
         <activity android:name=".Hot" />
         <activity android:name=".Tilaurakot" />

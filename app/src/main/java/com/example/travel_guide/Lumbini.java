@@ -1,7 +1,9 @@
 package com.example.travel_guide;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -84,6 +86,20 @@ public class Lumbini extends AppCompatActivity {
         but3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)  {
 
+                new AlertDialog.Builder(Lumbini.this)
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .setTitle("Destiny Confirmation")
+                        .setMessage("Are you sure you want to go to Lumbini?")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener()
+                        {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                startActivity(new Intent(Lumbini.this, localride.class));
+                            }
+
+                        })
+                        .setNegativeButton("No", null)
+                        .show();
             }
         });
 
