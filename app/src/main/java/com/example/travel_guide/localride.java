@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -33,6 +34,8 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polyline;
+import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
@@ -43,24 +46,67 @@ import java.util.List;
 public class localride extends AppCompatActivity implements OnMapReadyCallback{
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        Toast.makeText(this, "Map is Ready", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Your Route is Ready", Toast.LENGTH_SHORT).show();
         mMap=googleMap;
         if (mLocationPermissionGranted){
-            getDeviceLocation();
             mMap.setMyLocationEnabled(true);
             mMap.getUiSettings().setMyLocationButtonEnabled(false);
-            LatLng Lumbini = new LatLng(27.6792, 83.5070);
 
+            LatLng Lumbini1 = new LatLng(27.6480129, 83.4666511);
+            LatLng Lumbini2 = new LatLng(27.5065, 83.4377);
+            LatLng Lumbini = new LatLng(27.469554, 83.275788);
             mMap.addMarker(new MarkerOptions()
                     .icon(BitmapDescriptorFactory.fromResource(R.drawable.icon))
                     .position(Lumbini)
                     .title("Lumbini")
                     .snippet("Wanna Visit"));
 
-            init();
 
+            mMap.addPolyline(new PolylineOptions()
+                    .add(Lumbini2)
+                    .add(Lumbini)
+                    .width(15f)
+                    .color(Color.RED)
+                    .clickable(true)
+
+            );
+
+            googleMap.setOnPolylineClickListener(new GoogleMap.OnPolylineClickListener()
+            {
+                @Override
+                public void onPolylineClick(Polyline polyline)
+                {
+                    Toast.makeText(localride.this,"Please Take Any Micro/Bus", Toast.LENGTH_LONG).show();
+                }
+            });
+
+          /* mMap.addPolyline(new PolylineOptions()
+                    .add(Lumbini1)
+                    .add(Lumbini)
+                    .width(15f)
+                    .color(Color.GREEN)
+            );*/
+
+            mMap.addPolyline(new PolylineOptions()
+                    .add(Lumbini1)
+                    .add(Lumbini2)
+                    .width(15f)
+                    .color(Color.BLUE)
+                    .clickable(true)
+            );
+            googleMap.setOnPolylineClickListener(new GoogleMap.OnPolylineClickListener()
+            {
+                @Override
+                public void onPolylineClick(Polyline polyline)
+                {
+                    Toast.makeText(localride.this,"Please Take Any micro/Bus for your Blue ride and Take Lumbini Yatatat for your Red ride", Toast.LENGTH_LONG).show();
+                }
+            });
+
+            init();
         }
     }
+
     private static final String TAG = "MapActivity";
 
     private static final String FINE_LOCATION = Manifest.permission.ACCESS_FINE_LOCATION;
@@ -148,7 +194,7 @@ public class localride extends AppCompatActivity implements OnMapReadyCallback{
                         }
                         else{
                             Log.d(TAG, "OnComplete: current location is null!");
-                            Toast.makeText(localride.this,"unable to get current location", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(localride.this,"unable to get current location", Toast.LENGTH_SHORT).show                                   ();
                         }
                     }
                 });
