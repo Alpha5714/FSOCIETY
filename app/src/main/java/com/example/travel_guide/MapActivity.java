@@ -29,6 +29,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -52,41 +53,48 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
          LatLng Tilaurakot = new LatLng(27.5829, 83.0845);
          LatLng Ranimahal = new LatLng(27.9267, 83.5278);
          LatLng Banbatika = new LatLng(27.6527, 83.4824);
+
          mMap.addMarker(new MarkerOptions()
+                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.icon))
                  .position(Lumbini)
-                 .title("Bhaktapur")
+                 .title("Lumbini")
                  .snippet("Wanna Visit"));
          mMap.addMarker(new MarkerOptions()
+                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.icon))
                  .position(Tilaurakot)
-                 .title("Patan")
+                 .title("Tilaurakot")
                  .snippet("Wanna Visit"));
          mMap.addMarker(new MarkerOptions()
+
+                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.icon))
                  .position(Ranimahal)
-                 .title("Nagarkot")
+                 .title("Ranimahal")
                  .snippet("Wanna Visit"));
          mMap.addMarker(new MarkerOptions()
+                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.icon))
                  .position(Banbatika)
-                 .title("Chandragiri")
+                 .title("Banbatika")
                  .snippet("Wanna Visit"));
+
          mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener()
 
          {
 
              @Override
              public void onInfoWindowClick(Marker arg0) {
-                 if(arg0 != null && arg0.getTitle().equals("Bhaktapur")){
+                 if(arg0 != null && arg0.getTitle().equals("Lumbini")){
                      Intent intent1 = new Intent(MapActivity.this, Lumbini.class);
                      startActivity(intent1);}
 
-                 if(arg0 != null && arg0.getTitle().equals("Patan")){
+                 if(arg0 != null && arg0.getTitle().equals("Tilaurakot")){
                      Intent intent2 = new Intent(MapActivity.this, Tilaurakot.class);
                      startActivity(intent2);}
 
-                 if(arg0 != null && arg0.getTitle().equals("Nagarkot")){
+                 if(arg0 != null && arg0.getTitle().equals("Ranimahal")){
                      Intent intent3 = new Intent(MapActivity.this, Ranimahal.class);
                      startActivity(intent3);}
 
-                 if(arg0 != null && arg0.getTitle().equals("Chandragiri")){
+                 if(arg0 != null && arg0.getTitle().equals("Banbatika")){
                      Intent intent4 = new Intent(MapActivity.this, Banbatika.class);
                      startActivity(intent4);}
              }
