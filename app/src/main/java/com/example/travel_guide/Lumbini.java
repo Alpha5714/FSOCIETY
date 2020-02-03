@@ -1,5 +1,6 @@
 package com.example.travel_guide;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,6 +26,8 @@ public class Lumbini extends AppCompatActivity {
     ImageView but2;
     ImageView btt3;
     ImageButton msg;
+    ImageButton btt4;
+    ImageButton btt5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,7 @@ public class Lumbini extends AppCompatActivity {
         slideModels.add(new SlideModel("https://highlandexpeditions.com/wp-content/uploads/2019/08/BRP_Lumbini_Mayadevi_temple.jpg"," "));
         slideModels.add(new SlideModel("https://www.holidify.com/images/bgImages/LUMBINI.jpg"," "));
         slideModels.add(new SlideModel("https://www.glorioushimalaya.com/wp-content/uploads/Lumbini-tours.jpg"," "));
+
         imageSlider.setImageList(slideModels,true);
         ImageButton but = (ImageButton) findViewById(R.id.ic_info);
         but.setOnClickListener(new View.OnClickListener() {
@@ -102,10 +106,25 @@ public class Lumbini extends AppCompatActivity {
                         .show();
             }
         });
-
+        ImageView butt4 = (ImageView) findViewById(R.id.lb1);
+        butt4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Lumbini.this, Specialities.class));
+            }
+        });
+        ImageView butt5 = (ImageView) findViewById(R.id.lb2);
+        butt5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Lumbini.this, Treek.class));
+            }
+        });
     }
 
-
-
 }
+
+
+
+
 

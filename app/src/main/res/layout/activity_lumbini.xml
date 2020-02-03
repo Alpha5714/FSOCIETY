@@ -33,9 +33,20 @@
             android:background="@drawable/bg_view">
 
         </View>
+
+        <ImageButton
+            android:id="@+id/msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/ic_msg" />
+
         <ImageButton
             android:id="@+id/ic_info"
-            android:layout_marginLeft="170dp"
+            android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -294,7 +305,7 @@
                     android:id="@+id/lb1"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:src="@drawable/lbus" />
+                    android:src="@drawable/market" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -305,14 +316,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Want a Local Ride?"
+                        android:text="Want Some Local Goods?"
                         android:textSize="18sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Find your local bus"
+                        android:text="Lets explore the market"
                         android:textSize="13sp" />
 
                 </LinearLayout>
@@ -335,7 +346,7 @@
                     android:id="@+id/lb2"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:src="@drawable/lbus" />
+                    android:src="@drawable/treeking" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -346,14 +357,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Want a Local Ride?"
+                        android:text="Want a Guide?"
                         android:textSize="18sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Find your local bus"
+                        android:text="Hire one now!"
                         android:textSize="13sp" />
 
                 </LinearLayout>
@@ -363,10 +374,5 @@
         </LinearLayout>
     </ScrollView>
 
-    <ImageButton
-        android:id="@+id/msg"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:background="@drawable/ic_msg" />
 
 </LinearLayout>

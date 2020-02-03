@@ -102,6 +102,7 @@ public class localride extends AppCompatActivity implements OnMapReadyCallback{
                     Toast.makeText(localride.this,"Please Take Any micro/Bus for your Blue ride and Take Lumbini Yatatat for your Red ride", Toast.LENGTH_LONG).show();
                 }
             });
+            moveCamera(new LatLng(27.5065, 83.4377), 10.5f, "My Location");
 
             init();
         }
