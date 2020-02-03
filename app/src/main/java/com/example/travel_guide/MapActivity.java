@@ -49,7 +49,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
          getDeviceLocation();
          mMap.setMyLocationEnabled(true);
          mMap.getUiSettings().setMyLocationButtonEnabled(false);
-         LatLng Lumbini = new LatLng(27.6792, 83.5070);
+         LatLng Lumbini = new LatLng(27.469554, 83.275788);
          LatLng Tilaurakot = new LatLng(27.5829, 83.0845);
          LatLng Ranimahal = new LatLng(27.9267, 83.5278);
          LatLng Banbatika = new LatLng(27.6527, 83.4824);
@@ -108,7 +108,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
          private static final String FINE_LOCATION = Manifest.permission.ACCESS_FINE_LOCATION;
          private static final String COURSE_LOCATION = Manifest.permission.ACCESS_COARSE_LOCATION;
          private static final int LOCATION_PERMISSION_REQUEST_CODE = 1234;
-         private static final float DEFAULT_ZOOM = 15f;
+         private static final float DEFAULT_ZOOM = 9.1f;
         //widgets
             private EditText mSearchText;
             private ImageView mGps;

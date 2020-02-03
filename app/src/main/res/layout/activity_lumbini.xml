@@ -35,24 +35,24 @@
         </View>
 
         <ImageButton
-            android:id="@+id/msg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/speaker"
+            android:layout_width="30dp"
+            android:layout_height="25dp"
             android:layout_alignParentRight="true"
             android:layout_marginLeft="150dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="19dp"
             android:layout_marginRight="10dp"
-            android:background="@drawable/ic_msg" />
+            android:background="@drawable/ic_speaker" />
 
         <ImageButton
             android:id="@+id/ic_info"
-            android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
             android:layout_marginRight="10dp"
-            android:src="@drawable/ic_info">
+            android:src="@drawable/ic_help">
 
         </ImageButton>
 

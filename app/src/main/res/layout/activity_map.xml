@@ -68,4 +68,19 @@
         android:background="@drawable/ic_hot">
 
     </ImageView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ic_hot"
+        android:text="Trending Places"
+        android:layout_marginRight="4dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gps"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:layout_below="@id/ic_hot"/>
+
 </RelativeLayout>
